@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <style>
+        .main{
+            width: 600px;
+            height: 300px;
+            margin: 400px auto;
+        }
+        .search{
+            width: 80%;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form th:action="/search" method="get">
+        <input class="search" type="search" th:field="{key}"/>
+            <input type="submit" />
+        </form>
+        <table class="table table-condensed">
+            <caption>精简表格布局</caption>
+            <thead>
+            <tr>
+                <th>商品id</th>
+                <th>链接id</th>
+                <th>卖家地址</th>
+                <th>快递费</th>
+                <th>优惠活动</th>
+                <th>活动开始时间</th>
+                <th>活动结束时间</th>
+                <th>服务保障</th>
+                <th>会场</th>
+                <th>现价</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>560001</td>
+            </tr>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>560001</td>
+            </tr>
+            <tr>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>Tanmay</td>
+                <td>Bangalore</td>
+                <td>560001</td>
+                <td>560001</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
