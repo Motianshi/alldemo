@@ -1,0 +1,119 @@
+[
+{
+  "query": {
+    "range": {
+      "currentPrice": {
+        "gt": "144",
+        "lt": "146"
+      }
+    }
+  },
+  "from": 0,
+  "size": 50
+},
+{
+  "query": {
+      "match": {
+        "title": "电动车"
+      }
+  },
+  "from": 0,
+  "size": 50
+},
+  {
+    "query": {
+      "bool": {
+        "must": [
+          {"match": {"title": "酒"}},
+          {"range": {"currentPrice": {"gt": "11","lt": "190"}}},
+          {"term": {"sellAddress": "武汉"}}
+        ]
+      }
+    },
+    "from": 0,
+    "size": 50
+  }
+]
+
+"hits": [
+  {
+    "_index": "idx_item",
+    "_type": "_doc",
+    "_id": "Rw3G7HEBDGgXwwHKFPCb",
+    "_score": 10.995819,
+    "_source": {
+      "itemId": "525033055044",
+      "urlId": "https://detail.tmall.com/item.htm?id=525033055044&skuId=def",
+      "sellAddress": "湖北武汉",
+      "courierFee": "快递: 0.00",
+      "promotions": "满199减10,满299减30,满499减60,可跨店",
+      "originalPrice": "3768.00",
+      "startTime": "2016-11-01 00:00:00",
+      "endTime": "2016-11-11 23:59:59",
+      "title": "酒嗨酒 西班牙原瓶原装进口红酒蒙德干红葡萄酒6只装整箱送酒具",
+      "serviceGuarantee": "破损包退;正品保证;公益宝贝;不支持7天退换;极速退款",
+      "venue": "食品主会场",
+      "currentPrice": "151.00"
+    }
+  },
+  {
+    "_index": "idx_item",
+    "_type": "_doc",
+    "_id": "TQ3G7HEBDGgXwwHKFPCb",
+    "_score": 10.995819,
+    "_source": {
+      "itemId": "525067565220",
+      "urlId": "https://detail.tmall.com/item.htm?id=525067565220&skuId=def",
+      "sellAddress": "湖北武汉",
+      "courierFee": "快递: 0.00",
+      "promotions": "满199减10,满299减30,满499减60,可跨店",
+      "originalPrice": "5928.00",
+      "startTime": "2016-11-01 00:00:00",
+      "endTime": "2016-11-11 23:59:59",
+      "title": "酒嗨酒 西班牙原瓶原装进口红酒整箱黑金干红葡萄酒6支装送醒酒器",
+      "serviceGuarantee": "破损包退;正品保证;公益宝贝;不支持7天退换;极速退款",
+      "venue": "食品主会场",
+      "currentPrice": "169.00"
+      }
+  },
+  {
+  "_index": "idx_item",
+  "_type": "_doc",
+  "_id": "KA3G7HEBDGgXwwHKFO6b",
+  "_score": 10.437664,
+  "_source": {
+    "itemId": "39340577570",
+    "urlId": "https://detail.tmall.com/item.htm?id=39340577570&skuId=def",
+    "sellAddress": "湖北武汉",
+    "courierFee": "快递: 0.00",
+    "promotions": "满199减10,满299减30,满499减60,可跨店",
+    "originalPrice": "680.00",
+    "startTime": "2016-11-01 00:00:00",
+    "endTime": "2016-11-11 23:59:59",
+    "title": "金沙回沙酒老五星 52度酱香型白酒粮食酒500mL*2瓶",
+    "serviceGuarantee": "破损包退;正品保证;物流破损险;不支持7天退换;极速退款",
+    "venue": "食品主会场",
+    "currentPrice": "138.00"
+    }
+  },
+  {
+    "_index": "idx_item",
+    "_type": "_doc",
+    "_id": "FQ3G7HEBDGgXwwHKFO6b",
+    "_score": 9.033843,
+    "_source": {
+      "itemId": "540856418335",
+      "urlId": "https://detail.tmall.com/item.htm?id=540856418335&skuId=def",
+      "sellAddress": "湖北武汉",
+      "courierFee": "快递: 0.00",
+      "promotions": "满199减10,满299减30,满499减60,可跨店",
+      "originalPrice": "599.00",
+      "startTime": "2016-11-01 00:00:00",
+      "endTime": "2016-11-11 23:59:59",
+      "title": "金沙原浆53度酱香型高度白酒陶坛装大坛粮食酒2500mL",
+      "serviceGuarantee": "破损包退;正品保证;物流破损险;不支持7天退换;极速退款",
+      "venue": "食品主会场",
+      "currentPrice": "119.00"
+    }
+  }
+]
