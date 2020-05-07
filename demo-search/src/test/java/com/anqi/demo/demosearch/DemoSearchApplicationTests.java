@@ -35,75 +35,90 @@ public class DemoSearchApplicationTests {
                 "   }";
         String mappings = "" +
                 "{\n" +
-                "    \"properties\": {\n" +
-                "      \"itemId\" : {\n" +
-                "        \"type\": \"keyword\",\n" +
-                "        \"ignore_above\": 64\n" +
-                "      },\n" +
-                "      \"urlId\" : {\n" +
-                "        \"type\": \"keyword\",\n" +
-                "        \"ignore_above\": 64\n" +
-                "      },\n" +
-                "      \"sellAddress\" : {\n" +
-                "        \"type\": \"text\",\n" +
-                "        \"analyzer\": \"ik_max_word\", \n" +
-                "        \"search_analyzer\": \"ik_smart\",\n" +
-                "        \"fields\": {\n" +
-                "          \"keyword\" : {\"ignore_above\" : 256, \"type\" : \"keyword\"}\n" +
+                "  \"properties\": {\n" +
+                "    \"itemId\": {\n" +
+                "      \"type\": \"keyword\",\n" +
+                "      \"ignore_above\": 64\n" +
+                "    },\n" +
+                "    \"urlId\": {\n" +
+                "      \"type\": \"keyword\",\n" +
+                "      \"ignore_above\": 64\n" +
+                "    },\n" +
+                "    \"sellAddress\": {\n" +
+                "      \"type\": \"text\",\n" +
+                "      \"analyzer\": \"ik_max_word\",\n" +
+                "      \"search_analyzer\": \"ik_smart\",\n" +
+                "      \"fields\": {\n" +
+                "        \"keyword\": {\n" +
+                "          \"ignore_above\": 256,\n" +
+                "          \"type\": \"keyword\"\n" +
                 "        }\n" +
-                "      },\n" +
-                "      \"courierFee\" : {\n" +
-                "        \"type\": \"text\n" +
-                "      },\n" +
-                "      \"promotions\" : {\n" +
-                "        \"type\": \"text\",\n" +
-                "        \"analyzer\": \"ik_max_word\", \n" +
-                "        \"search_analyzer\": \"ik_smart\",\n" +
-                "        \"fields\": {\n" +
-                "          \"keyword\" : {\"ignore_above\" : 256, \"type\" : \"keyword\"}\n" +
-                "        }\n" +
-                "      },\n" +
-                "      \"originalPrice\" : {\n" +
-                "        \"type\": \"keyword\",\n" +
-                "        \"ignore_above\": 64\n" +
-                "      },\n" +
-                "      \"startTime\" : {\n" +
-                "        \"type\": \"date\",\n" +
-                "        \"format\": \"yyyy-MM-dd HH:mm:ss\"\n" +
-                "      },\n" +
-                "      \"endTime\" : {\n" +
-                "        \"type\": \"date\",\n" +
-                "        \"format\": \"yyyy-MM-dd HH:mm:ss\"\n" +
-                "      },\n" +
-                "      \"title\" : {\n" +
-                "        \"type\": \"text\",\n" +
-                "        \"analyzer\": \"ik_max_word\", \n" +
-                "        \"search_analyzer\": \"ik_smart\",\n" +
-                "        \"fields\": {\n" +
-                "          \"keyword\" : {\"ignore_above\" : 256, \"type\" : \"keyword\"}\n" +
-                "        }\n" +
-                "      },\n" +
-                "      \"serviceGuarantee\" : {\n" +
-                "        \"type\": \"text\",\n" +
-                "        \"analyzer\": \"ik_max_word\", \n" +
-                "        \"search_analyzer\": \"ik_smart\",\n" +
-                "        \"fields\": {\n" +
-                "          \"keyword\" : {\"ignore_above\" : 256, \"type\" : \"keyword\"}\n" +
-                "        }\n" +
-                "      },\n" +
-                "      \"venue\" : {\n" +
-                "        \"type\": \"text\",\n" +
-                "        \"analyzer\": \"ik_max_word\", \n" +
-                "        \"search_analyzer\": \"ik_smart\",\n" +
-                "        \"fields\": {\n" +
-                "          \"keyword\" : {\"ignore_above\" : 256, \"type\" : \"keyword\"}\n" +
-                "        }\n" +
-                "      },\n" +
-                "      \"currentPrice\" : {\n" +
-                "        \"type\": \"keyword\",\n" +
-                "        \"ignore_above\": 64\n" +
                 "      }\n" +
-                "   }\n" +
+                "    },\n" +
+                "    \"courierFee\": {\n" +
+                "      \"type\": \"text\"\n" +
+                "    },\n" +
+                "    \"promotions\": {\n" +
+                "      \"type\": \"text\",\n" +
+                "      \"analyzer\": \"ik_max_word\",\n" +
+                "      \"search_analyzer\": \"ik_smart\",\n" +
+                "      \"fields\": {\n" +
+                "        \"keyword\": {\n" +
+                "          \"ignore_above\": 256,\n" +
+                "          \"type\": \"keyword\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"originalPrice\": {\n" +
+                "      \"type\": \"keyword\",\n" +
+                "      \"ignore_above\": 64\n" +
+                "    },\n" +
+                "    \"startTime\": {\n" +
+                "      \"type\": \"date\",\n" +
+                "      \"format\": \"yyyy-MM-dd HH:mm:ss\"\n" +
+                "    },\n" +
+                "    \"endTime\": {\n" +
+                "      \"type\": \"date\",\n" +
+                "      \"format\": \"yyyy-MM-dd HH:mm:ss\"\n" +
+                "    },\n" +
+                "    \"title\": {\n" +
+                "      \"type\": \"text\",\n" +
+                "      \"analyzer\": \"ik_max_word\",\n" +
+                "      \"search_analyzer\": \"ik_smart\",\n" +
+                "      \"fields\": {\n" +
+                "        \"keyword\": {\n" +
+                "          \"ignore_above\": 256,\n" +
+                "          \"type\": \"keyword\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"serviceGuarantee\": {\n" +
+                "      \"type\": \"text\",\n" +
+                "      \"analyzer\": \"ik_max_word\",\n" +
+                "      \"search_analyzer\": \"ik_smart\",\n" +
+                "      \"fields\": {\n" +
+                "        \"keyword\": {\n" +
+                "          \"ignore_above\": 256,\n" +
+                "          \"type\": \"keyword\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"venue\": {\n" +
+                "      \"type\": \"text\",\n" +
+                "      \"analyzer\": \"ik_max_word\",\n" +
+                "      \"search_analyzer\": \"ik_smart\",\n" +
+                "      \"fields\": {\n" +
+                "        \"keyword\": {\n" +
+                "          \"ignore_above\": 256,\n" +
+                "          \"type\": \"keyword\"\n" +
+                "        }\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"currentPrice\": {\n" +
+                "      \"type\": \"keyword\",\n" +
+                "      \"ignore_above\": 64\n" +
+                "    }\n" +
+                "  }\n" +
                 "}";
         clientService.createIndex("idx_item", settings, mappings);
     }
