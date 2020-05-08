@@ -148,7 +148,7 @@ public class RestHighLevelClientService {
         if (jsonNode.isArray()) {
             for (JsonNode node : jsonNode) {
                 if (isAutoId) {
-                    request.add(new IndexRequest(indexName).source(node.asText(), XContentType.JSON));
+                    request.add(new IndexRequest(indexName).source(node.toString(), XContentType.JSON));
                 } else {
                     request.add(new IndexRequest(indexName)
                             .id(node.get("id").asText())
