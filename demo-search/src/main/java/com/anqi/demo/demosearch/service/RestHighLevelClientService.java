@@ -16,9 +16,10 @@ import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.MatchQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,8 @@ import java.io.IOException;
 
 @Service
 public class RestHighLevelClientService {
+
+    private static final Logger log = LoggerFactory.getLogger(RestHighLevelClientService.class);
 
     @Autowired
     private RestHighLevelClient client;
@@ -94,19 +97,17 @@ public class RestHighLevelClientService {
         return client.search(request, RequestOptions.DEFAULT);
     }
 
-    /**
-     * 简单模糊匹配 默认分页为 0,10
-     * @param field
-     * @param key
-     * @param indexNames
-     * @return
-     * @throws IOException
-     */
-    public SearchResponse search(String field, String key, String ... indexNames) throws IOException{
+
+    public SearchResponse search(String field, String key, String rangeField, String from, String to,
+                                 String termField, String termVal, String ... indexNames) throws IOException{
         SearchRequest request = new SearchRequest(indexNames);
+
         SearchSourceBuilder builder = new SearchSourceBuilder();
-        builder.query(new MatchQueryBuilder(field, key));
+        BoolQueryBuilder boolQueryBuilder = new BoolQueryBuilder();
+        boolQueryBuilder.must(new MatchQueryBuilder(field, key)).must(new RangeQueryBuilder(rangeField).from(from).to(to)).must(new TermQueryBuilder(termField, termVal));
+        builder.query(boolQueryBuilder);
         request.source(builder);
+        log.info("[搜索语句为:{}]",request.source().toString());
         return client.search(request, RequestOptions.DEFAULT);
     }
 

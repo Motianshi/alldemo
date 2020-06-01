@@ -2,6 +2,9 @@ package com.anqi.demo.demosearch;
 
 import com.anqi.demo.demosearch.service.ItemService;
 import com.anqi.demo.demosearch.service.RestHighLevelClientService;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +115,18 @@ public class DemoSearchApplicationTests {
     @Test
     public void importAll() throws IOException {
         clientService.importAll("idx_item", true, itemService.getItemsJson());
+    }
+
+
+    @Test
+    public void search() throws IOException {
+        SearchResponse search = clientService.search("title", "酒", "currentPrice",
+                "11", "149", "sellAddress", "武汉");
+        SearchHits hits = search.getHits();
+        SearchHit[] hits1 = hits.getHits();
+        for (SearchHit documentFields : hits1) {
+            System.out.println( documentFields.getSourceAsString());
+        }
     }
 
 }

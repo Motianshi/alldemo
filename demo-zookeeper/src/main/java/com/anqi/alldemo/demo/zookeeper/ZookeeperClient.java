@@ -34,7 +34,7 @@ public class ZookeeperClient {
     //客户端
     private CuratorFramework curatorFramework;
 
-    Map<String,ZkSequence> zkMap = Maps.newConcurrentMap();
+    private Map<String,ZkSequence> zkMap = Maps.newConcurrentMap();
 
     public ZookeeperClient(String host, String sequencePath) {
         this.host = host;
