@@ -18,13 +18,13 @@ public class SearchController {
     @RequestMapping("/search")
     public String search() {
         SearchHits hits = null;
-        try {
-            SearchResponse search = service.search("name", "s", "idx_s");
-            hits = search.getHits();
-            Object[] collapseValues = hits.getCollapseValues();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            SearchResponse search = service.search("name", "s", "idx_s");
+//            hits = search.getHits();
+//            Object[] collapseValues = hits.getCollapseValues();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         return  hits.toString();
     }
