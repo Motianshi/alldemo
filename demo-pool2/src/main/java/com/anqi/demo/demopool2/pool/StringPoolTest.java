@@ -33,22 +33,6 @@ public class StringPoolTest {
                 }
             }
         }
-        ArrayList<String> list = new ArrayList<>(Arrays.asList("0", "1", "2", "3", "4", "5"));
-        list.parallelStream().forEach(item -> {
-                String s = "";
-                try {
-                    s = pool.borrowObject();
-                    LOG.info("item:{},s:{}", item, s);
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    if (s!= null && !s.equals("")) {
-                        pool.returnObject(s);
-                    }
-                }
-            }
-        );
     }
 }
 
