@@ -1,0 +1,21 @@
+logging:
+  level:
+    root: debug
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_skywalking
+    username: root
+    password: anqi1995
+
+mybatis:
+  mapper-locations: classpath:mappers/*/*.xml
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8088
+  servlet:
+    context-path: /boottest
+

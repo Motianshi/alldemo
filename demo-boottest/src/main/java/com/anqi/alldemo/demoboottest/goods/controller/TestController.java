@@ -1,6 +1,6 @@
-package com.anqi.alldemo.demoboottest.controller;
+package com.anqi.alldemo.demoboottest.goods.controller;
 
-import com.anqi.alldemo.demoboottest.service.TestService;
+import com.anqi.alldemo.demoboottest.goods.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +14,8 @@ public class TestController {
     private TestService testService;
 
     @RequestMapping("getItems")
-    public String getItems(String id) {
+    public String getItems() {
         List<String> items = testService.getItems();
-        return "success-"+id+"-"+items;
+        return "success-"+"-"+items;
     }
 }

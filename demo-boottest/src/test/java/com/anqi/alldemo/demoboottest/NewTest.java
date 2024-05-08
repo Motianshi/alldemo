@@ -1,6 +1,6 @@
 package com.anqi.alldemo.demoboottest;
 
-import com.anqi.alldemo.demoboottest.service.TestService;
+import com.anqi.alldemo.demoboottest.goods.service.TestService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

@@ -24,7 +24,8 @@ public class OrderService {
         LOG.info("订单信息落库");
         //处理关联业务
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
+//            Thread.sleep(3000);
             //记录用户创建订单的行为
             orderBehaviorService.saveCreateOrderBehave(orderInfo);
             //记录用户访问订单服务的行为
