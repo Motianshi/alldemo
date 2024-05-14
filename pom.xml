@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>demo-storm</module>
+        <module>demo-kafka</module>
     </modules>
     <name>alldemo</name>
     <description>Demo project for Spring Boot</description>
